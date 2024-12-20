@@ -24,7 +24,7 @@ uint32_t HuffmanDecoder::GetBits(uint32_t needBit)
 
         result <<= readBit;
         result |= this->_curValue >> (this->_bitCount - readBit);
-        this->_curValue &= (1 << (this->_bitCount - needBit)) - 1;
+        this->_curValue &= (1 << (this->_bitCount - readBit)) - 1;
 
         this->_bitCount -= readBit;
         needBit -= readBit;
